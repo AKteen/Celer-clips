@@ -1,4 +1,18 @@
 services:
+  # Frontend Service
+  - type: web
+    name: opus-mvp-frontend
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    plan: starter
+    region: oregon
+    branch: main
+    healthCheckPath: /health
+    envVars:
+      - key: VITE_API_URL
+        value: https://opus-mvp-api.onrender.com
+  
+  # Backend Service
   - type: web
     name: opus-mvp-api
     env: docker
