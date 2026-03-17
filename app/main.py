@@ -21,7 +21,7 @@ temp_manager.cleanup_old_files("storage/clips", max_age_hours=24)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
